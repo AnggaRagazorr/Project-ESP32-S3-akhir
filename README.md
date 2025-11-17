@@ -12,7 +12,7 @@
 | Encoder CLK   | 10   | interruptEncoder     |
 | Encoder DT    | 11   | interruptEncoder     |
 | Potensiometer | 5    | TaskPot (Core 1)     |
-| Button Start  | 18   | TaskButtonStart      |
+| Button Start  | 21   | TaskButtonStart      |
 | Button Stop   | 19   | TaskButtonStop       |
 | LED RUN       | 3    | TaskIndicator        |
 | LED SORT      | 7    | TaskIndicator        |
