@@ -40,6 +40,7 @@ xTaskCreatePinnedToCore(TaskStepper,   "Stepper", 4000, NULL, 3, NULL, 0);
 xTaskCreatePinnedToCore(TaskServoGate, "Servo",   4000, NULL, 2, NULL, 1);
 xTaskCreatePinnedToCore(TaskOLED,      "OLED",    5000, NULL, 2, NULL, 1);
 ```
+2.MUTEX
 
 ____________________________________________________
 INPUT
