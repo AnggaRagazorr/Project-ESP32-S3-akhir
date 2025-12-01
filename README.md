@@ -13,7 +13,27 @@ Project ini dirancang untuk demonstrasi line sorting sederhana / mini conveyor o
 
 ## IMPLEMENTASI YANG DIGUNAKAN
 d. Multicore,Mutex,Queue (Semaphore Tambahan)
+1. Multicore
 
+### **Apa itu Multicore?**
+Multicore adalah kemampuan mikrokontroler (seperti ESP32-S3) yang memiliki **lebih dari satu core CPU** sehingga dapat menjalankan beberapa task secara **paralel**.  
+Dengan multicore, satu task dapat berjalan di Core 0, sementara task lain berjalan di Core 1 tanpa saling menghambat.
+
+### **Contoh pada ESP32-S3**
+ESP32-S3 memiliki **2 core (Core 0 dan Core 1)**.  
+Task dapat ditempatkan pada core tertentu menggunakan:
+
+```cpp
+xTaskCreatePinnedToCore(
+    taskFunction,      // Nama fungsi task
+    "Task Name",       // Nama task
+    4096,              // Stack size
+    NULL,              // Parameter
+    1,                 // Priority
+    NULL,              // Task handle
+    0                  // Nomor core: 0 atau 1
+);
+```
 ____________________________________________________
 INPUT
 | **Komponen**        | **Fungsi**                          | **Pin ESP32-S3** |
