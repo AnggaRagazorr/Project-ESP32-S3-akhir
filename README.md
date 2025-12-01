@@ -1,6 +1,19 @@
-# Project-ESP32-S3-akhir
+#  ESP32-S3 Conveyor System — Stepper, Encoder, Servo, OLED (FreeRTOS Dual-Core)
+
+Project ini merupakan sistem **Conveyor otomatis** berbasis **ESP32-S3** dengan fitur:
+- Kontrol **Start / Stop** menggunakan tombol  
+- Pengaturan kecepatan dengan **Potensiometer**  
+- Pembacaan **Rotary Encoder** (interrupt) untuk menghitung putaran / item  
+- Gerakan **Servo Gate** sebagai pemisah barang  
+- Motor **Stepper** sebagai penggerak conveyor  
+- Tampilan status pada **OLED SSD1306**  
+- Berjalan secara paralel menggunakan **FreeRTOS (Dual-Core)**  
+
+Project ini dirancang untuk demonstrasi line sorting sederhana / mini conveyor otomatis.
 
 
+
+____________________________________________________
 INPUT
 | **Komponen**        | **Fungsi**                          | **Pin ESP32-S3** |
 | ------------------- | ----------------------------------- | ---------------- |
