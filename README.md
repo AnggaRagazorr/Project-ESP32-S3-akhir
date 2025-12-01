@@ -10,7 +10,7 @@ INPUT
 | Encoder CLK         | Membaca langkah encoder (Interrupt) | Pin 10           |
 | Encoder DT          | Penentu arah encoder                | Pin 11           |
 
---
+____________________________________________________
 OUTPUT
 | **Komponen**    | **Fungsi**                              | **Pin ESP32-S3** |
 | --------------- | --------------------------------------- | ---------------- |
