@@ -43,6 +43,7 @@ xTaskCreatePinnedToCore(TaskOLED,      "OLED",    5000, NULL, 2, NULL, 1);
 2.MUTEX
 
 ____________________________________________________
+## PIN GPIO YANG DIGUNAKAN
 INPUT
 | **Komponen**        | **Fungsi**                          | **Pin ESP32-S3** |
 | ------------------- | ----------------------------------- | ---------------- |
