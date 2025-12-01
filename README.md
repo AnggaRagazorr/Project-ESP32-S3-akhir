@@ -41,6 +41,7 @@ xTaskCreatePinnedToCore(TaskServoGate, "Servo",   4000, NULL, 2, NULL, 1);
 xTaskCreatePinnedToCore(TaskOLED,      "OLED",    5000, NULL, 2, NULL, 1);
 ```
 2.MUTEX
+
 Mutex adalah Mutual Exclusion, yaitu semaphore khusus untuk melindungi resource bersama.
 Mutex memiliki fitur priority inheritance → mencegah deadlock & priority inversion.
 Digunakan ketika resource hanya boleh diakses satu task pada satu waktu.
