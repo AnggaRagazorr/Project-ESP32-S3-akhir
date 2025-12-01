@@ -46,8 +46,18 @@ Mutex memiliki fitur priority inheritance → mencegah deadlock & priority inver
 Digunakan ketika resource hanya boleh diakses satu task pada satu waktu.
 
 Contoh Mutex (Melindungi Oled)
-Membuat Mutex: 'oledMutex = xSemaphoreCreateMutex();'
+Membuat Mutex: `oledMutex = xSemaphoreCreateMutex();`
+```cpp
+Mengunci resource OLED:
+xSemaphoreTake(oledMutex, portMAX_DELAY);
 
+display.clearDisplay();
+display.setCursor(0, 0);
+display.print("Conveyor: ");
+display.println(conveyorRunning ? "RUN" : "STOP");
+
+display.display();
+```
 ____________________________________________________
 ## PIN GPIO YANG DIGUNAKAN
 INPUT
