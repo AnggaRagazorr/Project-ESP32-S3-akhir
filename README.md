@@ -11,7 +11,8 @@ Project ini merupakan sistem **Conveyor otomatis** berbasis **ESP32-S3** dengan 
 
 Project ini dirancang untuk demonstrasi line sorting sederhana / mini conveyor otomatis.
 
-
+## IMPLEMENTASI YANG DIGUNAKAN
+d. Multicore,Mutex,Queue (Semaphore Tambahan)
 
 ____________________________________________________
 INPUT
