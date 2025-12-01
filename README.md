@@ -12,5 +12,5 @@
 | 8  | Stepper B+           | GPIO 38                                           | Output coil B+                        |
 | 9  | Stepper A+           | GPIO 39                                           | Output coil A+                        |
 | 10 | Stepper A−           | GPIO 40                                           | Output coil A−                        |
-| 11 | OLED SDA             | (default SDA, biasanya GPIO 8 atau sesuai wiring) | Jalur data I²C                        |
-| 12 | OLED SCL             | (default SCL, biasanya GPIO 9 atau sesuai wiring) | Jalur clock I²C                       |
+| 11 | OLED SDA             |  GPIO 8                                           | Jalur data I²C                        |
+| 12 | OLED SCL             |  GPIO 9                                           | Jalur clock I²C                       |
