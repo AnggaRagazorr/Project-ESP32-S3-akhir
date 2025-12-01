@@ -1,16 +1,21 @@
 # Project-ESP32-S3-akhir
 
-| No | Nama Komponen        | Pin ESP32-S3                                      | Fungsi                                |
-| -- | -------------------- | ------------------------------------------------- | ------------------------------------- |
-| 1  | Tombol START         | GPIO 21                                           | Input untuk menyalakan conveyor       |
-| 2  | Tombol STOP          | GPIO 19                                           | Input untuk menghentikan conveyor     |
-| 3  | Potensiometer Speed  | GPIO 5                                            | Input analog untuk mengatur kecepatan |
-| 4  | Rotary Encoder – CLK | GPIO 10                                           | Input interrupt channel A             |
-| 5  | Rotary Encoder – DT  | GPIO 11                                           | Input channel B untuk arah            |
-| 6  | Servo Gate           | GPIO 42                                           | Output PWM untuk menggerakkan servo   |
-| 7  | Stepper B−           | GPIO 37                                           | Output coil B−                        |
-| 8  | Stepper B+           | GPIO 38                                           | Output coil B+                        |
-| 9  | Stepper A+           | GPIO 39                                           | Output coil A+                        |
-| 10 | Stepper A−           | GPIO 40                                           | Output coil A−                        |
-| 11 | OLED SDA             |  GPIO 8                                           | Jalur data I²C                        |
-| 12 | OLED SCL             |  GPIO 9                                           | Jalur clock I²C                       |
+
+INPUT
+| **Komponen**        | **Fungsi**                          | **Pin ESP32-S3** |
+| ------------------- | ----------------------------------- | ---------------- |
+| Tombol START        | Menyalakan conveyor                 | Pin 21           |
+| Tombol STOP         | Menghentikan conveyor               | Pin 19           |
+| Potensiometer Speed | Mengatur kecepatan conveyor         | Pin 5            |
+| Encoder CLK         | Membaca langkah encoder (Interrupt) | Pin 10           |
+| Encoder DT          | Penentu arah encoder                | Pin 11           |
+
+OUTPUT
+| **Komponen**    | **Fungsi**                              | **Pin ESP32-S3** |
+| --------------- | --------------------------------------- | ---------------- |
+| OLED Display    | Menampilkan status, kecepatan & counter | SDA (8), SCL (9) |
+| Servo Gate      | Menggerakkan gate pemisah barang        | Pin 42           |
+| Stepper Coil B− | Menggerakkan motor stepper              | Pin 37           |
+| Stepper Coil B+ | Menggerakkan motor stepper              | Pin 38           |
+| Stepper Coil A+ | Menggerakkan motor stepper              | Pin 39           |
+| Stepper Coil A− | Menggerakkan motor stepper              | Pin 40           |
