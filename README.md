@@ -1,20 +1,16 @@
 # Project-ESP32-S3-akhir
 
-| Komponen      | GPIO | Task                 |
-| ------------- | ---- | -------------------- |
-| Stepper A−    | 37   | TaskStepper (Core 0) |
-| Stepper B+    | 38   | TaskStepper (Core 0) |
-| Stepper A+    | 39   | TaskStepper (Core 0) |
-| Stepper B−    | 40   | TaskStepper (Core 0) |
-| Servo         | 42   | TaskGate (Core 1)    |
-| OLED SDA      | 8    | TaskOLED (Core 1)    |
-| OLED SCL      | 9    | TaskOLED (Core 1)    |
-| Encoder CLK   | 10   | interruptEncoder     |
-| Encoder DT    | 11   | interruptEncoder     |
-| Potensiometer | 5    | TaskPot (Core 1)     |
-| Button Start  | 21   | TaskButtonStart      |
-| Button Stop   | 19   | TaskButtonStop       |
-| LED RUN       | 3    | TaskIndicator        |
-| LED SORT      | 7    | TaskIndicator        |
-| LED STOP      | 15   | TaskIndicator        |
-| Buzzer        | 4    | TaskAlarm            |
+| No | Nama Komponen        | Pin ESP32-S3                                      | Fungsi                                |
+| -- | -------------------- | ------------------------------------------------- | ------------------------------------- |
+| 1  | Tombol START         | GPIO 21                                           | Input untuk menyalakan conveyor       |
+| 2  | Tombol STOP          | GPIO 19                                           | Input untuk menghentikan conveyor     |
+| 3  | Potensiometer Speed  | GPIO 5                                            | Input analog untuk mengatur kecepatan |
+| 4  | Rotary Encoder – CLK | GPIO 10                                           | Input interrupt channel A             |
+| 5  | Rotary Encoder – DT  | GPIO 11                                           | Input channel B untuk arah            |
+| 6  | Servo Gate           | GPIO 42                                           | Output PWM untuk menggerakkan servo   |
+| 7  | Stepper B−           | GPIO 37                                           | Output coil B−                        |
+| 8  | Stepper B+           | GPIO 38                                           | Output coil B+                        |
+| 9  | Stepper A+           | GPIO 39                                           | Output coil A+                        |
+| 10 | Stepper A−           | GPIO 40                                           | Output coil A−                        |
+| 11 | OLED SDA             | (default SDA, biasanya GPIO 8 atau sesuai wiring) | Jalur data I²C                        |
+| 12 | OLED SCL             | (default SCL, biasanya GPIO 9 atau sesuai wiring) | Jalur clock I²C                       |
