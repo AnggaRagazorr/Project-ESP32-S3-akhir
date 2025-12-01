@@ -12,7 +12,7 @@ Project ini merupakan sistem **Conveyor otomatis** berbasis **ESP32-S3** dengan 
 Project ini dirancang untuk demonstrasi line sorting sederhana / mini conveyor otomatis.
 
 ## IMPLEMENTASI YANG DIGUNAKAN
-d. Multicore,Mutex,Queue (Semaphore Tambahan)
+d. Multicore,Mutex,Queue 
 1. Multicore
 
 ### **Apa itu Multicore?**
@@ -23,6 +23,7 @@ Dengan multicore, satu task dapat berjalan di Core 0, sementara task lain berjal
 ESP32-S3 memiliki **2 core (Core 0 dan Core 1)**.  
 Task dapat ditempatkan pada core tertentu menggunakan:
 
+Potongan program Multicore :
 ```cpp
 xTaskCreatePinnedToCore(
     taskFunction,      // Nama fungsi task
@@ -33,7 +34,13 @@ xTaskCreatePinnedToCore(
     NULL,              // Task handle
     0                  // Nomor core: 0 atau 1
 );
+xTaskCreatePinnedToCore(TaskPot,       "Pot",     3000, NULL, 2, NULL, 0);
+xTaskCreatePinnedToCore(TaskStepper,   "Stepper", 4000, NULL, 3, NULL, 0);
+
+xTaskCreatePinnedToCore(TaskServoGate, "Servo",   4000, NULL, 2, NULL, 1);
+xTaskCreatePinnedToCore(TaskOLED,      "OLED",    5000, NULL, 2, NULL, 1);
 ```
+
 ____________________________________________________
 INPUT
 | **Komponen**        | **Fungsi**                          | **Pin ESP32-S3** |
