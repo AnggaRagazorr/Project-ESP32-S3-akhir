@@ -15,7 +15,6 @@ Project ini dirancang untuk demonstrasi line sorting sederhana / mini conveyor o
 d. Multicore,Mutex,Queue 
 1. Multicore
 
-### **Apa itu Multicore?**
 Multicore adalah kemampuan mikrokontroler (seperti ESP32-S3) yang memiliki **lebih dari satu core CPU** sehingga dapat menjalankan beberapa task secara **paralel**.  
 Dengan multicore, satu task dapat berjalan di Core 0, sementara task lain berjalan di Core 1 tanpa saling menghambat.
 
@@ -59,6 +58,35 @@ display.println(conveyorRunning ? "RUN" : "STOP");
 
 display.display();
 ```
+
+Melepas Mutex: `xSemaphoreGive(oledMutex);`
+
+3.Queue
+
+Queue adalah sarana komunikasi antar-task yang aman (thread-safe).
+Digunakan ketika satu task perlu mengirim data ke task lain.
+
+Contoh penggunaan dalam proyek:
+
+Task Potensiometer → mengirim nilai speed ke Task Stepper
+Task Encoder → mengirim count ke Task Servo Gate & Task OLED
+
+Contoh Implementasi :
+```cpp
+Membuat queue:
+speedQueue = xQueueCreate(10, sizeof(int));
+countQueue = xQueueCreate(10, sizeof(int));
+
+Mengirim data ke queue (TaskPot):
+xQueueSend(speedQueue, &speedVal, 0);
+
+Menerima data dari queue (TaskStepper):
+xQueueReceive(speedQueue, &speed, 0);
+
+Task Encoder mengirim count:
+xQueueSend(countQueue, &temp, 0);
+```
+ Queue memastikan data antar task tidak tabrakan dan aman.
 ____________________________________________________
 ## PIN GPIO YANG DIGUNAKAN
 INPUT
